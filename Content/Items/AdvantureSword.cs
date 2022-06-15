@@ -1,10 +1,14 @@
+using TerraJ.Content.TerraJBase;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace TerraJ.Content.Items;
 
 public class AdvantureSword: TerraJItem {
-	public override void SetDefaults() {
+	protected override string SetName => "AdventureSword";
+	protected override string TooltipMessage => "AdvantureSwordTooltip";
+	
+	protected override void Properties() {
 		Item.damage = 16;
 		Item.DamageType = DamageClass.Default;
 		Item.useTime = 20;
@@ -17,12 +21,8 @@ public class AdvantureSword: TerraJItem {
 		Item.autoReuse = true;
 	}
 
-	protected override string ItemName => "AdventureSword";
-	protected override string TooltipMessage => "AdvantureSwordTooltip";
-
 	public override void AddRecipes() => CreateRecipe()
 		.AddIngredient(ItemID.Gel, 2)
-		.AddTile(TileID.Adamantite)
+		.AddTile(TileID.WorkBenches)
 		.Register();
-
 }
