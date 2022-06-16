@@ -4,17 +4,37 @@ using Terraria.ModLoader;
 namespace TerraJ.Content.TerraJBase;
 
 public abstract class TerraJItem: ModItem {
+    private readonly string name;
+    private readonly string tMsg;
+    
+    protected TerraJItem(string name, string tMsg) {
+        this.tMsg = tMsg;
+        this.name = name;
+    }
+    
+    protected TerraJItem(string name) {
+        this.tMsg = "";
+        this.name = name;
+    }
+    
+    protected TerraJItem() {
+        this.tMsg = "";
+        this.name = "";
+    }
+
+    public override string Texture => TerraJ.ModName + "/Assets/Items/" + name;
+
     public override void SetStaticDefaults() {
-        if (SetName != null) {
-            DisplayName.AddTranslation(GameCulture.DefaultCulture, SetName);
-        } else if (string.IsNullOrEmpty(SetName)) {
+        if (name != null) 
+            DisplayName.AddTranslation(GameCulture.DefaultCulture, name);
+        else if (string.IsNullOrEmpty(name)) {
             Logging.PublicLogger.Warn("Invalid item name! Using standard generated name");
             DisplayName.SetDefault("UnknownItem-" + TerraJ.Instance.UUID());
         }
 
-        if (!string.IsNullOrEmpty(TooltipMessage)) 
-            Tooltip.SetDefault(TooltipMessage); 
-        else if (string.IsNullOrEmpty(TooltipMessage))
+        if (!string.IsNullOrEmpty(tMsg)) 
+            Tooltip.SetDefault(tMsg); 
+        else if (string.IsNullOrEmpty(tMsg))
             Tooltip.SetDefault("");
     }
 
@@ -24,8 +44,6 @@ public abstract class TerraJItem: ModItem {
         
         Properties();
     }
-
-    protected abstract string SetName { get; }
-    protected virtual string TooltipMessage { get; }
+    
     protected virtual void Properties() {}
 }

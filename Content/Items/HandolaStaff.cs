@@ -9,5 +9,7 @@ public class HandolaStaff: TerraJItem {
         
     }
 
-    protected override string SetName { get; }
+    public HandolaStaff(string name) : base(name)
+    {
+    }
 }
