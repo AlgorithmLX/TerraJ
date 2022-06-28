@@ -3,5 +3,8 @@
         ItemName: {
             AdvantureSword: Advanture's Sword
         }
+        NPCName: {
+            AlgortihmLX: AlgortihmLX
+        }
     }
 }

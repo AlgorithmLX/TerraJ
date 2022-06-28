@@ -3,5 +3,8 @@ Mods: {
         ItemName: {
             AdvantureSword: Меч Адванта
         }
+        NPCName: {
+            AlgortihmLX: АлгоритмLX
+        }
     }
 }
