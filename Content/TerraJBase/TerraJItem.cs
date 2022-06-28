@@ -1,9 +1,9 @@
+namespace TerraJ.Content.TerraJBase;
+
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace TerraJ.Content.TerraJBase;
-
-public abstract class TerraJItem: ModItem {
+public class TerraJItem : ModItem {
     private readonly string name;
     private readonly string tMsg;
     

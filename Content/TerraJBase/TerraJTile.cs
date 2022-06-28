@@ -1,8 +1,8 @@
-﻿using Terraria.ModLoader;
+﻿namespace TerraJ.Content.TerraJBase;
 
-namespace TerraJ.Content.TerraJBase;
+using Terraria.ModLoader;
 
-public abstract class TerraJTile: ModTile {
+public class TerraJTile: ModTile {
     private readonly string setName;
     
     protected TerraJTile(string setName) {

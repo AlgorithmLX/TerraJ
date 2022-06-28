@@ -1,7 +1,7 @@
-﻿using TerraJ.Content.Items;
-using Terraria.ModLoader;
+﻿namespace TerraJ.Content;
 
-namespace TerraJ.Content;
+using Items;
+using Terraria.ModLoader;
 
 public class GettingModContent {
     public static int 
