@@ -5,11 +5,8 @@ using Terraria.ID;
 namespace TerraJ.Content.Items;
 
 public class HandolaStaff: TerraJItem {
-    protected override void Properties() {
-        
+    public HandolaStaff(string name) : base(name) {
     }
 
-    public HandolaStaff(string name) : base(name)
-    {
-    }
+    protected override void Properties() {}
 }
